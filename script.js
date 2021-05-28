@@ -1,8 +1,24 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-color = 'black';
-size = 20;
+let color = 'black';
+let size = 20;
+let isMouse = false;
+let x;
+let y;
+
+canvas.addEventListener('mousedown', (e) => {
+	isMouse = true;
+	x = e.offsetX;
+	y = e.offsetY;
+});
+
+canvas.addEventListener('mouseup', (e) => {
+	isMouse = false;
+	x = undefined;
+	y = undefined;
+	console.log(isMouse, x, y);
+});
 
 const drawCirlce = (x, y) => {
 	ctx.beginPath();
