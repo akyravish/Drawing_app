@@ -52,6 +52,10 @@ colorEl.addEventListener('change', (e) => {
 	color = e.target.value;
 });
 
+clear.addEventListener('click', () =>
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
+);
+
 canvas.addEventListener('mousedown', (e) => {
 	isMouse = true;
 	x = e.offsetX;
