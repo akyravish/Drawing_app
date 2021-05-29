@@ -1,8 +1,13 @@
 const canvas = document.getElementById('canvas');
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
+const sizeEl = document.getElementById('size');
+const colorel = document.getElementById('color');
+const clear = document.getElementById('clear');
 const ctx = canvas.getContext('2d');
 
 let color = 'black';
-let size = 2;
+let size = 10;
 let isMouse = false;
 let x;
 let y;
@@ -22,6 +27,16 @@ const drawStroke = (x1, y1, x2, y2) => {
 	ctx.lineWidth = size * 2;
 	ctx.stroke();
 };
+
+increaseBtn.addEventListener('click', () => {
+	size++;
+
+	if (size > 20) {
+		size = 20;
+	}
+
+	sizeEl.innerHTML = size;
+});
 
 canvas.addEventListener('mousedown', (e) => {
 	isMouse = true;
