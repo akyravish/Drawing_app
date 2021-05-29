@@ -38,6 +38,16 @@ increaseBtn.addEventListener('click', () => {
 	sizeEl.innerHTML = size;
 });
 
+decreaseBtn.addEventListener('click', () => {
+	size--;
+
+	if (size < 1) {
+		size = 1;
+	}
+
+	sizeEl.innerHTML = size;
+});
+
 canvas.addEventListener('mousedown', (e) => {
 	isMouse = true;
 	x = e.offsetX;
