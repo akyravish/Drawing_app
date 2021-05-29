@@ -2,7 +2,7 @@ const canvas = document.getElementById('canvas');
 const increaseBtn = document.getElementById('increase');
 const decreaseBtn = document.getElementById('decrease');
 const sizeEl = document.getElementById('size');
-const colorel = document.getElementById('color');
+const colorEl = document.getElementById('color');
 const clear = document.getElementById('clear');
 const ctx = canvas.getContext('2d');
 
@@ -48,13 +48,17 @@ decreaseBtn.addEventListener('click', () => {
 	sizeEl.innerHTML = size;
 });
 
+colorEl.addEventListener('change', (e) => {
+	color = e.target.value;
+});
+
 canvas.addEventListener('mousedown', (e) => {
 	isMouse = true;
 	x = e.offsetX;
 	y = e.offsetY;
 });
 
-canvas.addEventListener('mouseup', (e) => {
+canvas.addEventListener('mouseup', () => {
 	isMouse = false;
 	x = undefined;
 	y = undefined;
